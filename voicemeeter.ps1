@@ -2,7 +2,7 @@ $audiodgProcess = Get-Process -Name audiodg -ErrorAction SilentlyContinue
 $voicemeeterProcess = Get-Process | Where-Object {$_.ProcessName -like "*voicemeeter*"}
 
 if ($null -eq $audiodgProcess -or $null -eq $voicemeeterProcess) {
-    Write-Host "Le processus audiodg ou voicemeeter n'est pas en cours d'execution." -ForegroundColor Red
+    Write-Host "The audiodg process or voicemeeter is not running." -ForegroundColor Red
 } else {
 
     $numberOfCores = (Get-WmiObject Win32_ComputerSystem).NumberOfLogicalProcessors
@@ -14,5 +14,5 @@ if ($null -eq $audiodgProcess -or $null -eq $voicemeeterProcess) {
     $voicemeeterProcess.ProcessorAffinity = $lastCoreAffinity
     $voicemeeterProcess.PriorityClass = "High"
 
-    Write-Host "Laffinite et la priorite du processus audiodg et voicemeeter ont ete modifiees." -ForegroundColor Blue
+    Write-Host "Process affinity & prority of audiodg process and voicemeeter had been updtated" -ForegroundColor Blue
 }
