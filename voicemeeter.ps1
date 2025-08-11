@@ -14,5 +14,5 @@ if ($null -eq $audiodgProcess -or $null -eq $voicemeeterProcess) {
     $voicemeeterProcess.ProcessorAffinity = $lastCoreAffinity
     $voicemeeterProcess.PriorityClass = "High"
 
-    Write-Host "Process affinity & priority of audiodg process and voicemeeter has been updated" -ForegroundColor Blue
+    Write-Host "Process affinity & priority of audiodg and voicemeeter has been updated" -ForegroundColor Blue
 }
